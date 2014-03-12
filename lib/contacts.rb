@@ -20,16 +20,16 @@ class Contact
   def initialize(first_name, last_name)
     @first_name = first_name
     @last_name = last_name
-    @phone_numbers = []
-    @emails = {}
-    @addresses = {}
+    @all_phones = []
+    @emails = []
+    @addresses = []
   end
 
-  def add_number(new_number)
-    @phone_numbers << new_number
+  def add_number(type, number)
+    @all_phones << PhoneNumber.create(type, number)
   end
 
-  def add_email(type, address)
+  def add_email(e_type, e_address)
     @emails.store(type, address)
   end
 

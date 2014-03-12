@@ -1,5 +1,7 @@
 require 'rspec'
 require 'contacts'
+require 'Phone_Number'
+require 'Email_Address'
 
 describe Contact do
   before do
@@ -79,14 +81,14 @@ describe Contact do
   end
 end
 
-# describe Phone_Number do
-#   it "is initialized with a number and the number's type" do
-#     test_number = Phone_Number.new("home", "555.444.3333")
-#     test_number.should be_an_instance_of Phone_Number
-#   end
-#   it "lets you access the number and type" do
-#     test_number = Phone_Number.new("home", "555.444.3333")
-#     test_number.type.should eq "home"
-#     test_number.number.should eq "555.444.3333"
-#   end
-# end
+describe Phone_Number do
+  it "is initialized with a number and the number's type" do
+    test_number = Phone_Number.new("home", "555.444.3333")
+    test_number.should be_an_instance_of Phone_Number
+  end
+  it "lets you access the number and type" do
+    test_number = Phone_Number.new("home", "555.444.3333")
+    test_number.type.should eq "home"
+    test_number.number.should eq "555.444.3333"
+  end
+end

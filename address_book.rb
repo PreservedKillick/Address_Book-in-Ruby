@@ -1,9 +1,11 @@
 require './lib/contacts'
+require '.lib/Phone_Number'
+require './lib/Email_Address'
 
 system "clear"
 def contact_menu
   #system "clear"
-  puts "\n\n\nBuild Your Address Book\n\n"
+  puts "\e[94m\n\n\nBuild Your Address Book\n\n\e[0m"
   puts "Enter 'add' to add a contact to your address book."
   puts "Enter 'show' to show a list of your contacts."
   puts "Enter 'quit' if you've decided you don't want to build an address book.\n\n"

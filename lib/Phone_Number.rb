@@ -1,18 +1,20 @@
-class Phone_Number
-  @@all_numbers = {}
+class PhoneNumber
+
+  attr_reader :type, :number
 
   def initialize(type, number)
     @type = type
     @number = number
   end
 
-  def type
-    @type
+  def edit(type, number)
+
   end
 
-  def number
-    @number
+  def create(type, number)
+    new_phone = PhoneNumber.new(type, number)
   end
+
 
 end
 
