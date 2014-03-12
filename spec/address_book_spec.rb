@@ -18,9 +18,9 @@ describe Contact do
 
   it 'should add phone numbers to a contact' do
     test_contact = Contact.new("Maureen", "Dugan")
-    test_contact.phone_number.class.should eq Hash
-    test_contact.email.class.should eq Hash
-    test_contact.address.class.should eq Hash
+    test_contact.phone_numbers.class.should eq Array
+    test_contact.emails.class.should eq Hash
+    test_contact.addresses.class.should eq Hash
   end
 
   describe '.all' do
@@ -63,4 +63,30 @@ describe Contact do
       Contact.all.should eq []
     end
   end
+  describe '#add_number' do
+    it 'adds a phone number to the phone number array' do
+      test_contact = Contact.new("Bert", "Reynolds")
+      test_contact.add_number("5554443333")
+      test_contact.phone_numbers.should eq ["5554443333"]
+    end
+  end
+  describe '#add_email' do
+    it 'adds an email address to the email hash' do
+      test_contact = Contact.new("Bert", "Reynolds")
+      test_contact.add_email("personal", "joaubrey@gmail.com")
+      test_contact.emails.should eq({ "personal"=>"joaubrey@gmail.com" })
+    end
+  end
 end
+
+# describe Phone_Number do
+#   it "is initialized with a number and the number's type" do
+#     test_number = Phone_Number.new("home", "555.444.3333")
+#     test_number.should be_an_instance_of Phone_Number
+#   end
+#   it "lets you access the number and type" do
+#     test_number = Phone_Number.new("home", "555.444.3333")
+#     test_number.type.should eq "home"
+#     test_number.number.should eq "555.444.3333"
+#   end
+# end

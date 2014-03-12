@@ -1,7 +1,7 @@
 class Contact
   @@all_contacts = []
 
-  attr_reader :first_name, :last_name, :phone_number, :email, :address
+  attr_reader :first_name, :last_name, :phone_numbers, :emails, :addresses
 
   def Contact.all
     @@all_contacts
@@ -20,9 +20,21 @@ class Contact
   def initialize(first_name, last_name)
     @first_name = first_name
     @last_name = last_name
-    @phone_number = {}
-    @email = {}
-    @address = {}
+    @phone_numbers = []
+    @emails = {}
+    @addresses = {}
+  end
+
+  def add_number(new_number)
+    @phone_numbers << new_number
+  end
+
+  def add_email(type, address)
+    @emails.store(type, address)
+  end
+
+  def add_address(place, address)
+    @addresses.store(place, address)
   end
 
   def save
